@@ -92,24 +92,23 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
 
 The source code is organized within the `src/` directory, following a standard React project structure.
 
-    ```sh
-
 /src
 ├── App.css # Main stylesheet with variables and responsive design
 ├── App.jsx # Root component, handles routing and global state (theme, popup)
 ├── Cafe.jsx # Component for the "/cafe" page
 ├── HomePage.jsx # Component for the "About" section on the main page
-├── Layout.jsx # Main layout component with sidebar and main content area
+├── Layout.jsx # Main layout component with sidebar, header, and footer
 ├── ScrollToAnchor.jsx # Utility component for smooth scrolling to hash links
 ├── WeatherWidget.jsx # Component for the live weather display
 ├── index.css # Global CSS resets and base styles
 └── main.jsx # The entry point of the React application
-
-```
 
 ## Contact
 
 Yamin M - [reverb-saber.4b@icloud.com](mailto:reverb-saber.4b@icloud.com)
 
 Project Link: [https://github.com/atoll101](https://github.com/atoll101)
+
+```
+
 ```
