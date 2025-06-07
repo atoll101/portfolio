@@ -1,13 +1,11 @@
-import React, { useState } from "react"; // 1. Import useState
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import WeatherWidget from "./WeatherWidget";
 import ScrollToAnchor from "./ScrollToAnchor";
 
 const Layout = ({ toggleTheme, theme }) => {
-  // 2. Add state for the mobile navigation
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
-  // Function to close the mobile nav, can be passed to link clicks
   const closeMobileNav = () => {
     setMobileNavOpen(false);
   };
@@ -28,14 +26,12 @@ const Layout = ({ toggleTheme, theme }) => {
       <ScrollToAnchor />
       <div className="app-container">
         <header className="sidebar">
-          {/* 3. Add the mobile navigation toggle button */}
           <button
             className="mobile-nav-toggle"
             onClick={() => setMobileNavOpen(!isMobileNavOpen)}
             aria-label="Toggle navigation"
             aria-expanded={isMobileNavOpen}
           >
-            {/* This switches between the hamburger and a close (X) icon */}
             <i className={isMobileNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
           </button>
 
@@ -43,12 +39,10 @@ const Layout = ({ toggleTheme, theme }) => {
             <h1>Yamin M</h1>
             <h2>i like making things</h2>
 
-            {/* 4. Add a class to the nav based on the state */}
             <nav
               className={`main-nav ${isMobileNavOpen ? "mobile-nav-open" : ""}`}
             >
               <ul>
-                {/* 5. Add onClick to each link to close the menu */}
                 <li>
                   <Link to="/#about" onClick={closeMobileNav}>
                     / about

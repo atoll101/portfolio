@@ -30,12 +30,11 @@ function WeatherWidget() {
         return response.json();
       })
       .then((data) => {
-        // FIX for NaN: Check if data.wind exists before using it
         const windInKmh =
           data.wind && data.wind.speed ? Math.round(data.wind.speed * 3.6) : 0;
 
         setWeatherData({
-          description: data.weather[0].main, // Using main description like "Stormy"
+          description: data.weather[0].main,
           icon: getWeatherIcon(data.weather[0].id),
           location: data.name,
           celsius: Math.round(data.main.temp),
@@ -58,7 +57,7 @@ function WeatherWidget() {
 
   useEffect(() => {
     fetchWeatherData();
-    const intervalId = setInterval(fetchWeatherData, 60000); // 1 minute
+    const intervalId = setInterval(fetchWeatherData, 60000);
     return () => clearInterval(intervalId);
   }, [fetchWeatherData]);
 
@@ -72,7 +71,6 @@ function WeatherWidget() {
     return <div className="project-card weather-widget-card">Loading...</div>;
   }
 
-  // New JSX Structure based on your latest image
   return (
     <div className="project-card weather-widget-card">
       <div className="weather-header">
@@ -88,13 +86,11 @@ function WeatherWidget() {
       <div className="weather-footer">
         <div className="stats-list">
           <div className="stat-item">
-            <i className="fas fa-wind"></i>{" "}
-            {/* FIX: Using 'fas' for a valid icon */}
+            <i className="fas fa-wind"></i>
             <span>{weatherData.wind} km/h</span>
           </div>
           <div className="stat-item">
-            <i className="fas fa-tint"></i>{" "}
-            {/* FIX: Using 'fas' for a valid icon */}
+            <i className="fas fa-tint"></i>
             <span>{weatherData.humidity}%</span>
           </div>
         </div>

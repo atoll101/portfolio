@@ -1,18 +1,15 @@
-/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Crucial for predictable layouts */
+  box-sizing: border-box;
 }
 
-/* Base Font & Body Styles (Default from Vite, slightly adjusted) */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  /* Background and text colors will be set in App.css for the portfolio specific design */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,13 +18,12 @@
 }
 
 body {
-  min-height: 100vh; /* Ensures body takes full viewport height */
-  /* Specific background/text colors for the portfolio will be in App.css */
+  min-height: 100vh;
 }
 
 a {
   font-weight: 500;
-  color: #646cff; /* Default link color for general browser styles */
+  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {

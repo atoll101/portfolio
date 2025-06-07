@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-// Import your page and layout components
 import Layout from "./Layout";
 import HomePage from "./HomePage";
-import Cafe from "./Cafe"; // Renamed from Blog to Cafe
+import Cafe from "./Cafe";
 
-// Your project data remains here
 const projectsData = [
   {
     id: "portfolio",
@@ -17,8 +15,7 @@ const projectsData = [
     technologies: ["React", "Vite", "CSS3", "Responsive Design"],
     link: "https://www.yamin.com.au",
     images: ["/images/portfolio-1.avif", "/images/portfolio-2.avif"],
-    code: `// Example: Basic React component structure
-import React from 'react';
+    code: `import React from 'react';
 
 function MyComponent() {
   return <div>Hello, World!</div>;
@@ -34,9 +31,10 @@ export default MyComponent;`,
     technologies: ["Wordpress", "HTML", "CSS3"],
     link: "https://www.fibonacciacademy.com.au",
     images: ["/images/fibonacci-1.avif", "/images/fibonacci-2.avif"],
-    code: `// This is a WordPress site.
-// Custom CSS might look like:
-// .custom-button { background-color: #238879; color: white; }`,
+    code: `.custom-button { 
+  background-color: #238879; 
+  color: white; 
+}`,
   },
   {
     id: "studioho",
@@ -46,11 +44,10 @@ export default MyComponent;`,
     technologies: ["React", "Vite", "CSS3"],
     link: "https://www.studioho.com.au",
     images: ["/images/studioho-1.avif", "/images/studioho-2.avif"],
-    code: `// `,
+    code: ``,
   },
 ];
 
-// ProjectPopup component can stay here as it's opened from this level
 const ProjectPopup = ({ project, onClose, isAnimating }) => {
   if (!project) return null;
 
@@ -102,7 +99,7 @@ const ProjectPopup = ({ project, onClose, isAnimating }) => {
             <li key={tech}>{tech}</li>
           ))}
         </ul>
-        {project.code && project.code.trim() !== "//" && (
+        {project.code && project.code.trim() && (
           <>
             <h4>Code Snippet:</h4>
             <pre className="popup-code-block">
@@ -120,7 +117,6 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // --- State and Effects for Theme ---
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
@@ -163,7 +159,6 @@ function App() {
     });
   };
 
-  // --- State and Functions for Popup ---
   const openPopup = (project) => {
     setSelectedProject(project);
     setShowPopup(true);
@@ -185,12 +180,10 @@ function App() {
   return (
     <>
       <Routes>
-        {/* The Layout route wraps all pages to provide the consistent sidebar */}
         <Route
           path="/"
           element={<Layout toggleTheme={toggleTheme} theme={theme} />}
         >
-          {/* The 'index' route is the default child route for '/' */}
           <Route
             index
             element={
@@ -225,7 +218,6 @@ function App() {
               </>
             }
           />
-          {/* This is the route for your new "Cafe" page */}
           <Route
             path="cafe"
             element={<Cafe toggleTheme={toggleTheme} theme={theme} />}
@@ -233,7 +225,6 @@ function App() {
         </Route>
       </Routes>
 
-      {/* The popup is global and rendered on top of everything */}
       {showPopup && (
         <ProjectPopup
           project={selectedProject}

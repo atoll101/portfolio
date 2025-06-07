@@ -1,18 +1,15 @@
-/* Variables for colors and fonts */
 :root {
   --bg-color: #f0f0f0;
   --text-color-light: #232b46;
   --text-color-dark: #676e83;
-  --accent-color: #238879; /* Your main green accent color */
+  --accent-color: #238879;
   --font-heading: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  /* Card specific variables */
   --card-bg: #f1f1f1;
   --card-border: 1px solid rgba(0, 0, 0, 0.1);
   --card-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 
-  /* Theme-dependent variables */
   --popup-bg-color: var(--bg-color);
   --popup-text-color: var(--text-color-light);
   --popup-code-bg: #1e1e1e;
@@ -34,14 +31,12 @@
   --popup-button-hover-bg: #1e7066;
   --popup-button-hover-text: #ffffff;
 
-  /* Theme toggle specific vars (icon colors inside switch) */
   --theme-icon-sun-color-on-track: var(--accent-color);
   --theme-icon-moon-color-on-track: var(--accent-color);
   --theme-icon-color-on-knob: #ffffff;
   --theme-icon-color-on-accent-knob: #ffffff;
 }
 
-/* Dark theme variable overrides */
 body.dark-mode {
   --bg-color: #121212;
   --text-color-light: #e0e0e0;
@@ -76,7 +71,6 @@ body.dark-mode {
   --theme-icon-moon-color-on-track: var(--theme-icon-color-on-accent-knob);
 }
 
-/* Global styles applied to body */
 body {
   background-color: var(--bg-color);
   color: var(--text-color-light);
@@ -86,7 +80,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* App Container */
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -95,10 +88,9 @@ body {
   padding: 0 5rem;
 }
 
-/* Sidebar Styling */
 .sidebar {
   flex: 0 0 40%;
-  padding: 4rem 2rem 0 2rem; /* No bottom padding here */
+  padding: 4rem 2rem 0 2rem;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -109,7 +101,7 @@ body {
 .sidebar-content {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Fill parent .sidebar */
+  height: 100%;
 }
 
 .sidebar h1 {
@@ -133,10 +125,9 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Main Navigation */
 .main-nav {
   display: block;
-} /* Default to block for desktop/tablet */
+}
 .main-nav ul {
   list-style: none;
   padding: 0;
@@ -174,32 +165,25 @@ body {
   background-color: var(--nav-link-line-hover-color);
 }
 
-/* Wrapper for bottom sidebar elements */
 .sidebar-bottom-content {
-  margin-top: auto; /* Pushes this block to the bottom */
-  padding-bottom: 2rem; /* Space from the very bottom edge */
-  /* On mobile, this will be a flex container to center its children */
+  margin-top: auto;
+  padding-bottom: 2rem;
 }
 
-/* Container for the toggle switch */
 .theme-toggle-container {
-  display: flex; /* Helps if there were multiple items, here just holds the button */
+  display: flex;
   align-items: center;
 }
 
-/* Specific styling for toggle in main content (DESKTOP/TABLET) */
 .theme-toggle-container.main-content-toggle {
-  /* Default: visible. Will be hidden on mobile */
 }
 
-/* Specific styling for toggle in sidebar (MOBILE ONLY) */
 .theme-toggle-container.sidebar-toggle {
-  display: none; /* Hidden by default, shown on mobile */
-  justify-content: center; /* Center the button if container is wider */
-  margin-bottom: 1.5rem; /* Space above social links on mobile */
+  display: none;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-/* Theme Toggle Button Styling (Switch with Icons Inside) */
 .theme-toggle-button {
   background-color: #ccc;
   width: 50px;
@@ -267,11 +251,9 @@ body.dark-mode .moon-icon {
   opacity: 0;
 }
 
-/* Social Links */
 .social-links {
   display: flex;
   gap: 1.25rem;
-  /* On mobile, centering is handled by .sidebar-bottom-content */
 }
 .social-links a {
   color: var(--social-link-color);
@@ -283,7 +265,6 @@ body.dark-mode .moon-icon {
   transform: translateY(-3px);
 }
 
-/* Main Content Styling */
 .main-content {
   flex: 1;
   padding: 5rem 0rem;
@@ -312,7 +293,7 @@ section[id] {
   color: var(--section-title-color);
   text-transform: lowercase;
   letter-spacing: 0.1em;
-  margin-bottom: 0; /* Margin handled by parent */
+  margin-bottom: 0;
 }
 
 .section-header-body h3 {
@@ -321,7 +302,7 @@ section[id] {
   color: var(--section-title-color);
   text-transform: lowercase;
   letter-spacing: 0.1em;
-  margin-bottom: 0; /* Margin handled by parent */
+  margin-bottom: 0;
 }
 
 .section-block p {
@@ -329,7 +310,6 @@ section[id] {
   margin-bottom: 1rem;
 }
 
-/* Experience Section Card Styles */
 .experience-cards-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -385,7 +365,6 @@ section[id] {
   color: var(--text-color-dark);
 }
 
-/* Project section */
 #projects.section-block h3 {
   margin-bottom: 2rem;
 }
@@ -462,7 +441,6 @@ section[id] {
   font-weight: 500;
 }
 
-/* Project Popup Styles */
 .project-popup-overlay {
   position: fixed;
   top: 0;
@@ -615,19 +593,16 @@ section[id] {
   margin-top: 1rem;
 }
 
-/* --- NEW FINAL Weather Widget Styles --- */
-
 .weather-widget-card {
   cursor: default;
   padding: 1.25rem 1.5rem;
   max-width: 350px;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem; /* Space between rows */
+  gap: 0.1rem;
   margin-bottom: 3rem;
 }
 
-/* Header: Location and Time */
 .weather-header {
   display: flex;
   justify-content: space-between;
@@ -637,7 +612,6 @@ section[id] {
   font-size: 0.8rem;
 }
 
-/* Body: Temperature and Description */
 .weather-body {
   display: flex;
   flex-direction: column;
@@ -660,7 +634,6 @@ section[id] {
   text-transform: capitalize;
 }
 
-/* Footer: Stats and Icon */
 .weather-footer {
   display: flex;
   justify-content: space-between;
@@ -670,7 +643,7 @@ section[id] {
 .stats-list {
   display: flex;
   flex-direction: column;
-  gap: 0.01rem; /* Space between stat items */
+  gap: 0.01rem;
 }
 
 .stat-item {
@@ -684,7 +657,7 @@ section[id] {
 
 .stat-item i {
   font-size: 0.8rem;
-  width: 25px; /* Helps align text */
+  width: 25px;
   text-align: center;
   color: var(--text-color-dark);
 }
@@ -694,11 +667,8 @@ section[id] {
   color: var(--text-color-dark);
 }
 
-/* --- Cafe Page Drink Card Styles --- */
-
 .drinks-grid-container {
   display: grid;
-  /* This creates a responsive grid that adds columns as space becomes available */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 2.5rem;
@@ -709,7 +679,7 @@ section[id] {
   border: var(--card-border);
   border-radius: 8px;
   box-shadow: var(--card-shadow);
-  overflow: hidden; /* This keeps the image corners rounded */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -720,9 +690,8 @@ section[id] {
 
 .drink-card-image {
   width: 100%;
-  /* Creates a square image */
   aspect-ratio: 1 / 1;
-  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-fit: cover;
   display: block;
 }
 
@@ -743,9 +712,8 @@ section[id] {
   line-height: 1.5;
 }
 
-/* --- Mobile Navigation Toggle --- */
 .mobile-nav-toggle {
-  display: none; /* Hidden by default on desktop */
+  display: none;
   position: absolute;
   top: 3.2rem;
   left: 1.5rem;
@@ -754,7 +722,7 @@ section[id] {
   color: var(--text-color-dark);
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1001; /* Ensures it's above other content */
+  z-index: 1001;
   transition: color 0.3s ease;
 }
 
@@ -762,21 +730,20 @@ section[id] {
   color: var(--accent-color);
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
     padding: 0 1rem;
   }
   .sidebar {
-    position: relative; /* Needed for positioning the toggle button */
+    position: relative;
     height: auto;
     flex: none;
     padding: 2rem 1rem 1rem 1rem;
   }
 
   .mobile-nav-toggle {
-    display: block; /* Show the button on mobile */
+    display: block;
   }
   .sidebar-content {
     align-items: center;
@@ -793,64 +760,53 @@ section[id] {
   }
   .main-nav {
     display: block;
-    order: 1; /* Puts the nav after the intro paragraph */
+    order: 1;
   }
 
   .main-nav ul {
-    /* Core positioning for the pop-up */
     position: absolute;
-    top: 5rem; /* Adjust this value to position it perfectly under your header */
-    left: 1rem; /* Align to the right edge of the sidebar */
-    z-index: 1000; /* Ensure it's on top of other content */
+    top: 5rem;
+    left: 1rem;
+    z-index: 1000;
 
-    /* The look of the self-contained box */
-    background-color: var(
-      --popup-bg-color
-    ); /* Use a popup-specific color for better layering */
+    background-color: var(--popup-bg-color);
     border-radius: 8px;
     border: var(--card-border);
-    box-shadow: var(
-      --project-card-hover-shadow
-    ); /* A nice shadow to make it "pop" */
+    box-shadow: var(--project-card-hover-shadow);
     min-width: 200px;
-    padding: 0.5rem 0; /* Add some vertical padding inside the box */
+    padding: 0.5rem 0;
     list-style: none;
     margin: 0;
 
-    /* Animation: Initial state (hidden) */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px) scale(0.98);
     transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
   }
-  /* When the nav is open, expand the list */
-  /* The "open" state for the menu */
+
   .main-nav.mobile-nav-open ul {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
   }
 
-  /* Reset margin on list items for the new layout */
   .main-nav li {
     margin: 0;
   }
 
-  /* Styling for the links within the pop-up */
   .main-nav a {
-    display: block; /* Make the whole area clickable */
-    padding: 0.6rem 1.5rem; /* Give them nice padding */
-    text-align: left; /* Align text to the left for a classic dropdown feel */
+    display: block;
+    padding: 0.6rem 1.5rem;
+    text-align: left;
     letter-spacing: 0.05em;
   }
 
-  /* Ensure the desktop line-indicator is not present */
   .main-nav a:before {
     display: none;
   }
 
   .sidebar-bottom-content {
-    margin-top: 1rem; /* Reduced margin from top */
+    margin-top: 1rem;
     padding-bottom: 1rem;
     width: 100%;
     display: flex;
@@ -858,32 +814,27 @@ section[id] {
     align-items: center;
   }
 
-  /* Toggle visibility: Hide main content toggle, show sidebar toggle on mobile */
   .theme-toggle-container.main-content-toggle {
     display: none;
   }
   .theme-toggle-container.sidebar-toggle {
-    display: flex; /* Make it visible */
-    /* Centering is handled by .sidebar-bottom-content */
+    display: flex;
   }
 
   .social-links {
     justify-content: center;
-    margin-top: 0; /* Social links will be below the toggle */
+    margin-top: 0;
   }
   .social-links a {
     font-size: 1.5rem;
   }
 
   .section-header-with-toggle {
-    /* This will only be for desktop/tablet */
-    /* On mobile, the toggle inside this is hidden, so original h3 behaviour is fine */
-    /* Revert to simple h3 if needed, or ensure it doesn't look odd */
-    display: block; /* Revert flex for h3 to take full width */
-    margin-bottom: 1.5rem; /* Original h3 margin */
+    display: block;
+    margin-bottom: 1.5rem;
   }
   .section-header-with-toggle h3 {
-    margin-bottom: 1.5rem; /* Ensure h3 has its margin back if not flexed*/
+    margin-bottom: 1.5rem;
   }
 
   .main-content {
@@ -944,7 +895,6 @@ section[id] {
     padding: 0.8rem;
   }
 
-  /* Add this rule to hide the weather widget on mobile */
   .weather-widget-card {
     display: none;
   }
@@ -962,23 +912,22 @@ section[id] {
     padding-bottom: 1.5rem;
     align-items: flex-start;
   }
-  /* Hide sidebar toggle on tablet */
+
   .theme-toggle-container.sidebar-toggle {
     display: none;
   }
-  /* Ensure main content toggle is visible on tablet */
+
   .theme-toggle-container.main-content-toggle {
     display: flex;
   }
   .section-header-with-toggle {
-    /* Ensure it stays flex for tablet */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem; /* Restore original margin for the header block */
+    margin-bottom: 2rem;
   }
   .section-header-with-toggle h3 {
-    margin-bottom: 0; /* Title has no bottom margin, parent controls it */
+    margin-bottom: 0;
   }
 
   .sidebar h1 {

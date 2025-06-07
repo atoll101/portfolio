@@ -1,6 +1,5 @@
 import React from "react";
 
-// The ThemeToggleButton is needed here now for the desktop view
 const ThemeToggleButton = ({ onClick, theme }) => (
   <button
     onClick={onClick}
@@ -43,8 +42,6 @@ function HomePage({ toggleTheme, theme }) {
           illustrating random things.
         </p>
       </section>
-      {/* The project data and popup logic will now live inside App.jsx to be passed down */}
-      {/* We will adjust this in the final App.jsx file */}
     </>
   );
 }

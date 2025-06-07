@@ -60,7 +60,6 @@ function Cafe({ toggleTheme, theme }) {
         </div>
       </div>
 
-      {/* 2. Add the grid container and map over the data */}
       <div className="drinks-grid-container">
         {drinksData.map((drink) => (
           <div key={drink.id} className="drink-card">
