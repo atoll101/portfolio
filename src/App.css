@@ -1,0 +1,1019 @@
+/* Variables for colors and fonts */
+:root {
+  --bg-color: #f0f0f0;
+  --text-color-light: #232b46;
+  --text-color-dark: #676e83;
+  --accent-color: #238879; /* Your main green accent color */
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Card specific variables */
+  --card-bg: #f1f1f1;
+  --card-border: 1px solid rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+  /* Theme-dependent variables */
+  --popup-bg-color: var(--bg-color);
+  --popup-text-color: var(--text-color-light);
+  --popup-code-bg: #1e1e1e;
+  --popup-code-text: #d4d4d4;
+  --close-button-color: var(--text-color-light);
+  --project-card-hover-border: var(--accent-color);
+  --project-card-hover-shadow: 0 2px 8px -2px rgba(2, 12, 27, 0.4);
+  --social-link-color: var(--text-color-dark);
+  --social-link-hover-color: var(--accent-color);
+  --nav-link-color: var(--text-color-dark);
+  --nav-link-hover-color: var(--accent-color);
+  --nav-link-line-color: var(--text-color-dark);
+  --nav-link-line-hover-color: var(--accent-color);
+  --section-title-color: var(--accent-color);
+  --project-tag-bg: rgba(94, 234, 212, 0.15);
+  --project-tag-text: var(--accent-color);
+  --popup-button-bg: var(--accent-color);
+  --popup-button-text: var(--bg-color);
+  --popup-button-hover-bg: #1e7066;
+  --popup-button-hover-text: #ffffff;
+
+  /* Theme toggle specific vars (icon colors inside switch) */
+  --theme-icon-sun-color-on-track: var(--accent-color);
+  --theme-icon-moon-color-on-track: var(--accent-color);
+  --theme-icon-color-on-knob: #ffffff;
+  --theme-icon-color-on-accent-knob: #ffffff;
+}
+
+/* Dark theme variable overrides */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color-light: #e0e0e0;
+  --text-color-dark: #a0a0a0;
+
+  --card-bg: #1e1e1e;
+  --card-border: 1px solid rgba(255, 255, 255, 0.15);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  --popup-bg-color: #2a2a2a;
+  --popup-text-color: var(--text-color-light);
+  --popup-code-bg: #333333;
+  --popup-code-text: #e0e0e0;
+  --close-button-color: var(--text-color-light);
+  --project-card-hover-border: var(--accent-color);
+  --project-card-hover-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.6);
+  --social-link-color: var(--text-color-dark);
+  --social-link-hover-color: var(--accent-color);
+  --nav-link-color: var(--text-color-dark);
+  --nav-link-hover-color: var(--accent-color);
+  --nav-link-line-color: var(--text-color-dark);
+  --nav-link-line-hover-color: var(--accent-color);
+  --section-title-color: var(--accent-color);
+  --project-tag-bg: rgba(35, 136, 121, 0.3);
+  --project-tag-text: #7ddbc9;
+  --popup-button-bg: var(--accent-color);
+  --popup-button-text: #121212;
+  --popup-button-hover-bg: #1e7066;
+  --popup-button-hover-text: #f0f0f0;
+
+  --theme-icon-sun-color-on-track: var(--theme-icon-color-on-accent-knob);
+  --theme-icon-moon-color-on-track: var(--theme-icon-color-on-accent-knob);
+}
+
+/* Global styles applied to body */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color-light);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5rem;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  flex: 0 0 40%;
+  padding: 4rem 2rem 0 2rem; /* No bottom padding here */
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill parent .sidebar */
+}
+
+.sidebar h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.sidebar h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+
+.sidebar p {
+  font-size: 1.1rem;
+  color: var(--text-color-dark);
+  margin-bottom: 2rem;
+}
+
+/* Main Navigation */
+.main-nav {
+  display: block;
+} /* Default to block for desktop/tablet */
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.main-nav li {
+  margin-bottom: 0.75rem;
+}
+.main-nav a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: color 0.3s ease;
+}
+.main-nav a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 0.5rem;
+  background-color: var(--nav-link-line-color);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+.main-nav a:hover {
+  color: var(--nav-link-hover-color);
+}
+.main-nav a:hover:before {
+  width: 1rem;
+  background-color: var(--nav-link-line-hover-color);
+}
+
+/* Wrapper for bottom sidebar elements */
+.sidebar-bottom-content {
+  margin-top: auto; /* Pushes this block to the bottom */
+  padding-bottom: 2rem; /* Space from the very bottom edge */
+  /* On mobile, this will be a flex container to center its children */
+}
+
+/* Container for the toggle switch */
+.theme-toggle-container {
+  display: flex; /* Helps if there were multiple items, here just holds the button */
+  align-items: center;
+}
+
+/* Specific styling for toggle in main content (DESKTOP/TABLET) */
+.theme-toggle-container.main-content-toggle {
+  /* Default: visible. Will be hidden on mobile */
+}
+
+/* Specific styling for toggle in sidebar (MOBILE ONLY) */
+.theme-toggle-container.sidebar-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  justify-content: center; /* Center the button if container is wider */
+  margin-bottom: 1.5rem; /* Space above social links on mobile */
+}
+
+/* Theme Toggle Button Styling (Switch with Icons Inside) */
+.theme-toggle-button {
+  background-color: #ccc;
+  width: 50px;
+  height: 25px;
+  border-radius: 15px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-button::before {
+  content: "";
+  width: 21px;
+  height: 21px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 1;
+}
+
+.theme-icon {
+  font-size: 0.75rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.sun-icon {
+  left: 4.5px;
+  color: var(--theme-icon-sun-color-on-track);
+  opacity: 0;
+}
+
+.moon-icon {
+  right: 4.5px;
+  color: var(--theme-icon-moon-color-on-track);
+  opacity: 1;
+}
+
+body.dark-mode .theme-toggle-button {
+  background-color: var(--accent-color);
+}
+
+body.dark-mode .theme-toggle-button::before {
+  transform: translateX(25px);
+}
+
+body.dark-mode .sun-icon {
+  opacity: 1;
+  color: var(--theme-icon-sun-color-on-track);
+}
+
+body.dark-mode .moon-icon {
+  opacity: 0;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+  /* On mobile, centering is handled by .sidebar-bottom-content */
+}
+.social-links a {
+  color: var(--social-link-color);
+  font-size: 1.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover {
+  color: var(--social-link-hover-color);
+  transform: translateY(-3px);
+}
+
+/* Main Content Styling */
+.main-content {
+  flex: 1;
+  padding: 5rem 0rem;
+  overflow-y: auto;
+}
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+.section-block {
+  margin-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section-header-with-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header-with-toggle h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--section-title-color);
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0; /* Margin handled by parent */
+}
+
+.section-header-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--section-title-color);
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0; /* Margin handled by parent */
+}
+
+.section-block p {
+  color: var(--text-color-dark);
+  margin-bottom: 1rem;
+}
+
+/* Experience Section Card Styles */
+.experience-cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-left: -1.5rem;
+  padding-right: 0.5rem;
+}
+.experience-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.experience-cards-container:hover .experience-card:not(:hover) {
+  opacity: 0.7;
+  transform: scale(1);
+}
+.experience-card:hover {
+  transform: translateY(0);
+  border-color: var(--project-card-hover-border);
+  box-shadow: var(--project-card-hover-shadow);
+}
+.job-item {
+  display: flex;
+  margin-bottom: 0;
+}
+.job-date {
+  flex: 0 0 120px;
+  color: var(--text-color-dark);
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding-top: 0.25rem;
+  text-align: left;
+  margin-right: 1.5rem;
+}
+.job-details {
+  flex: 1;
+}
+.job-details h4 {
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+}
+.job-details p {
+  color: var(--text-color-dark);
+}
+
+/* Project section */
+#projects.section-block h3 {
+  margin-bottom: 2rem;
+}
+
+.project-item {
+  margin-bottom: 0;
+}
+.projects-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-left: -1.5rem;
+  padding-right: 0.5rem;
+}
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.projects-grid-container:hover .project-card:not(:hover) {
+  opacity: 0.7;
+  transform: scale(1);
+}
+.project-card:hover {
+  transform: translateY(0);
+  border-color: var(--project-card-hover-border);
+  box-shadow: var(--project-card-hover-shadow);
+}
+.project-item h4 {
+  font-size: 1.1rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-item h4 a.external-link-icon {
+  color: var(--text-color-dark);
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease;
+}
+.project-item h4 a.external-link-icon:hover {
+  color: var(--accent-color);
+}
+.project-item p {
+  font-size: 0.95rem;
+  color: var(--text-color-dark);
+  margin-bottom: 0.75rem;
+}
+.project-item ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.project-item ul li {
+  background-color: var(--project-tag-bg);
+  color: var(--project-tag-text);
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* Project Popup Styles */
+.project-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.project-popup-overlay.show {
+  opacity: 1;
+}
+.project-popup-content {
+  background-color: var(--popup-bg-color);
+  color: var(--popup-text-color);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 800px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    background-color 0.3s ease, color 0.3s ease;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.project-popup-content h5 a,
+.project-popup-content h5 a:visited {
+  color: var(--text-color-dark);
+  text-decoration: none;
+}
+
+.project-popup-content h5 a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.project-popup-overlay.show .project-popup-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+.close-popup-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--close-button-color);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.close-popup-btn:hover {
+  color: var(--accent-color);
+}
+.project-popup-content h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+.project-popup-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--text-color-light);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.project-popup-content h5 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--text-color-dark);
+  margin-top: -1rem;
+  margin-bottom: 0.75rem;
+}
+.project-popup-content p.popup-description {
+  font-size: 1rem;
+  color: var(--text-color-dark);
+  margin-bottom: 1rem;
+}
+.popup-button-link {
+  display: inline-block;
+  background-color: var(--popup-button-bg);
+  color: var(--popup-button-text);
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.popup-button-link:hover {
+  background-color: var(--popup-button-hover-bg);
+  transform: translateY(-1px);
+  color: var(--popup-button-hover-text);
+}
+.popup-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.popup-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.popup-tech-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.popup-tech-list li {
+  background-color: var(--project-tag-bg);
+  color: var(--project-tag-text);
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+.popup-code-block {
+  background-color: var(--popup-code-bg);
+  color: var(--popup-code-text);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+/* --- NEW FINAL Weather Widget Styles --- */
+
+.weather-widget-card {
+  cursor: default;
+  padding: 1.25rem 1.5rem;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem; /* Space between rows */
+  margin-bottom: 3rem;
+}
+
+/* Header: Location and Time */
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color-dark);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* Body: Temperature and Description */
+.weather-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  margin: 0.5rem 0;
+}
+
+.weather-body .temperature {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-color-light);
+}
+
+.weather-body .description {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-color-dark);
+  text-transform: capitalize;
+}
+
+/* Footer: Stats and Icon */
+.weather-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.01rem; /* Space between stat items */
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: var(--text-color-dark);
+}
+
+.stat-item i {
+  font-size: 0.8rem;
+  width: 25px; /* Helps align text */
+  text-align: center;
+  color: var(--text-color-dark);
+}
+
+.weather-footer .weather-icon {
+  font-size: 2rem;
+  color: var(--text-color-dark);
+}
+
+/* --- Cafe Page Drink Card Styles --- */
+
+.drinks-grid-container {
+  display: grid;
+  /* This creates a responsive grid that adds columns as space becomes available */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.drink-card {
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden; /* This keeps the image corners rounded */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--project-card-hover-shadow);
+}
+
+.drink-card-image {
+  width: 100%;
+  /* Creates a square image */
+  aspect-ratio: 1 / 1;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block;
+}
+
+.drink-card-content {
+  padding: 1rem 1.25rem;
+}
+
+.drink-card-title {
+  color: var(--text-color-light);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.drink-card-description {
+  color: var(--text-color-dark);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* --- Mobile Navigation Toggle --- */
+.mobile-nav-toggle {
+  display: none; /* Hidden by default on desktop */
+  position: absolute;
+  top: 3.2rem;
+  left: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color-dark);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001; /* Ensures it's above other content */
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+  color: var(--accent-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .sidebar {
+    position: relative; /* Needed for positioning the toggle button */
+    height: auto;
+    flex: none;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .mobile-nav-toggle {
+    display: block; /* Show the button on mobile */
+  }
+  .sidebar-content {
+    align-items: center;
+  }
+  .sidebar h1 {
+    font-size: 2.5rem;
+  }
+  .sidebar h2 {
+    font-size: 1rem;
+  }
+  .sidebar p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .main-nav {
+    display: block;
+    order: 1; /* Puts the nav after the intro paragraph */
+  }
+
+  .main-nav ul {
+    /* Core positioning for the pop-up */
+    position: absolute;
+    top: 5rem; /* Adjust this value to position it perfectly under your header */
+    left: 1rem; /* Align to the right edge of the sidebar */
+    z-index: 1000; /* Ensure it's on top of other content */
+
+    /* The look of the self-contained box */
+    background-color: var(
+      --popup-bg-color
+    ); /* Use a popup-specific color for better layering */
+    border-radius: 8px;
+    border: var(--card-border);
+    box-shadow: var(
+      --project-card-hover-shadow
+    ); /* A nice shadow to make it "pop" */
+    min-width: 200px;
+    padding: 0.5rem 0; /* Add some vertical padding inside the box */
+    list-style: none;
+    margin: 0;
+
+    /* Animation: Initial state (hidden) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.98);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
+  }
+  /* When the nav is open, expand the list */
+  /* The "open" state for the menu */
+  .main-nav.mobile-nav-open ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Reset margin on list items for the new layout */
+  .main-nav li {
+    margin: 0;
+  }
+
+  /* Styling for the links within the pop-up */
+  .main-nav a {
+    display: block; /* Make the whole area clickable */
+    padding: 0.6rem 1.5rem; /* Give them nice padding */
+    text-align: left; /* Align text to the left for a classic dropdown feel */
+    letter-spacing: 0.05em;
+  }
+
+  /* Ensure the desktop line-indicator is not present */
+  .main-nav a:before {
+    display: none;
+  }
+
+  .sidebar-bottom-content {
+    margin-top: 1rem; /* Reduced margin from top */
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Toggle visibility: Hide main content toggle, show sidebar toggle on mobile */
+  .theme-toggle-container.main-content-toggle {
+    display: none;
+  }
+  .theme-toggle-container.sidebar-toggle {
+    display: flex; /* Make it visible */
+    /* Centering is handled by .sidebar-bottom-content */
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 0; /* Social links will be below the toggle */
+  }
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  .section-header-with-toggle {
+    /* This will only be for desktop/tablet */
+    /* On mobile, the toggle inside this is hidden, so original h3 behaviour is fine */
+    /* Revert to simple h3 if needed, or ensure it doesn't look odd */
+    display: block; /* Revert flex for h3 to take full width */
+    margin-bottom: 1.5rem; /* Original h3 margin */
+  }
+  .section-header-with-toggle h3 {
+    margin-bottom: 1.5rem; /* Ensure h3 has its margin back if not flexed*/
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  .section-block {
+    margin-bottom: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .experience-cards-container,
+  .projects-grid-container {
+    margin-left: 0;
+    padding-right: 0;
+  }
+  .experience-card,
+  .project-card {
+    padding: 1rem;
+    margin: 0 -1rem 0 -1rem;
+  }
+  .job-details h4,
+  .project-item h4 {
+    font-size: 1rem;
+  }
+  .job-details p,
+  .project-item p {
+    font-size: 0.85rem;
+  }
+  .project-item ul li {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .project-popup-content {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+  .close-popup-btn {
+    font-size: 2rem;
+    top: 0.5rem;
+    right: 1rem;
+  }
+  .project-popup-content h3 {
+    font-size: 1.5rem;
+  }
+  .project-popup-content h4 {
+    font-size: 1rem;
+  }
+  .popup-images {
+    gap: 1rem;
+  }
+  .popup-tech-list li {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .popup-code-block {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  /* Add this rule to hide the weather widget on mobile */
+  .weather-widget-card {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-container {
+    padding: 0 1.5rem;
+  }
+  .sidebar {
+    flex: 0 0 30%;
+    padding: 3rem 1.5rem 0 1.5rem;
+  }
+  .sidebar-bottom-content {
+    padding-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  /* Hide sidebar toggle on tablet */
+  .theme-toggle-container.sidebar-toggle {
+    display: none;
+  }
+  /* Ensure main content toggle is visible on tablet */
+  .theme-toggle-container.main-content-toggle {
+    display: flex;
+  }
+  .section-header-with-toggle {
+    /* Ensure it stays flex for tablet */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem; /* Restore original margin for the header block */
+  }
+  .section-header-with-toggle h3 {
+    margin-bottom: 0; /* Title has no bottom margin, parent controls it */
+  }
+
+  .sidebar h1 {
+    font-size: 3rem;
+  }
+  .sidebar h2 {
+    font-size: 1.1rem;
+  }
+  .sidebar p {
+    font-size: 1rem;
+  }
+  .main-nav {
+    display: block;
+  }
+  .social-links {
+    justify-content: flex-start;
+  }
+
+  .main-content {
+    padding: 4rem 0rem;
+  }
+  .section-block {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .experience-cards-container,
+  .projects-grid-container {
+    margin-left: -0.5rem;
+  }
+  .project-popup-content {
+    max-width: 85%;
+    padding: 2rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
