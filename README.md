@@ -92,6 +92,8 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
 
 The source code is organized within the `src/` directory, following a standard React project structure.
 
+    ```sh
+
 /src
 ├── App.css # Main stylesheet with variables and responsive design
 ├── App.jsx # Root component, handles routing and global state (theme, popup)
@@ -103,8 +105,11 @@ The source code is organized within the `src/` directory, following a standard R
 ├── index.css # Global CSS resets and base styles
 └── main.jsx # The entry point of the React application
 
+```
+
 ## Contact
 
 Yamin M - [reverb-saber.4b@icloud.com](mailto:reverb-saber.4b@icloud.com)
 
 Project Link: [https://github.com/atoll101](https://github.com/atoll101)
+```
