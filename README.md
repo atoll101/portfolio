@@ -108,7 +108,3 @@ The source code is organized within the `src/` directory, following a standard R
 Yamin M - [reverb-saber.4b@icloud.com](mailto:reverb-saber.4b@icloud.com)
 
 Project Link: [https://github.com/atoll101](https://github.com/atoll101)
-
-```
-
-```
