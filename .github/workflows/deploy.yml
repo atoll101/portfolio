@@ -1,0 +1,40 @@
+    name: Deploy Vite React App to yamin.com.au
+
+    on:
+      push:
+        branches:
+          - main # IMPORTANT: Confirm this is your primary branch (e.g., 'master' or 'main')
+
+    jobs:
+      build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout Code
+            uses: actions/checkout@v3
+
+          - name: Set up Node.js
+            uses: actions/setup-node@v3
+            with:
+              node-version: '18' # Use a stable Node.js version compatible with your React app
+
+          - name: Install Dependencies
+            run: npm install
+
+          - name: Build Vite React App
+            run: npm run build # This command builds your project into the 'dist' folder
+
+          - name: Deploy to cPanel via FTP
+            uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+            with:
+              server: ${{ secrets.FTP_SERVER }} # This will be ftp.studioho.com.au
+              username: ${{ secrets.FTP_USERNAME }} # This will be your new FTP username (e.g., yamin_deploy)
+              password: ${{ secrets.FTP_PASSWORD }} # This will be the password for the new FTP account
+              local-dir: dist/ # The folder in your GitHub repo containing your built Vite app
+              # Since the new FTP account's root is now /home/studioho/yamin.com.au,
+              # an empty server-directory means deploying directly to that root.
+              server-directory: "" # Deploy to the root of the FTP account (which is yamin.com.au's web root)
+              # Set to true to delete files on the server that are NOT in your local-dir (dist/).
+              # Use with caution! Ensure your .htaccess is correctly in place or handled.
+              delete: true
+    
