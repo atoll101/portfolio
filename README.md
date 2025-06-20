@@ -6,6 +6,20 @@ This repository contains the source code for my personal portfolio website. It's
 
 ![Portfolio Screenshot](./public/images/portfolio-1.avif)
 
+## Table of Contents
+
+- [About The Project](#about-the-project)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+  - [Environment Variables](#environment-variables)
+  - [Run the Development Server](#run-the-development-server)
+- [Code Structure](#code-structure)
+- [Contact](#contact)
+- [License](#license)
+
 ## About The Project
 
 This portfolio is more than just a list of projects; it's a reflection of my journey from civil engineering to software development. It highlights my focus on bridging the gap between technical teams and client visions. The design is clean and content-focused, with interactive elements designed to create an engaging user experience.
@@ -62,49 +76,60 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
     yarn install
     ```
 
-3.  **Set up environment variables:**
-    This project requires an API key from OpenWeatherMap to fetch weather data.
+### Environment Variables
 
-    - Create a `.env` file in the root of the project:
-      ```sh
-      touch .env
-      ```
-    - Add your API key to the `.env` file. You can get a free key by signing up on the [OpenWeatherMap website](https://openweathermap.org/appid).
-      ```
-      VITE_OPENWEATHER_API_KEY=your_api_key_here
-      ```
+This project requires an API key from OpenWeatherMap to fetch weather data.
 
-4.  **Run the development server:**
+- Create a `.env` file in the root of the project:
+  ```sh
+  touch .env
+  ```
 
-    ```sh
-    npm run dev
+````
+
+  - Add your API key to the `.env` file. You can get a free key by signing up on the [OpenWeatherMap website](https://openweathermap.org/appid).
+    ```
+    VITE_OPENWEATHER_API_KEY=your_api_key_here
     ```
 
-    or with yarn:
+### Run the Development Server
 
-    ```sh
-    yarn dev
-    ```
+```sh
+npm run dev
+```
 
-    The application will be available at `http://localhost:5173` (or another port if 5173 is busy).
+or with yarn:
+
+```sh
+yarn dev
+```
+
+The application will be available at `http://localhost:5173` (or another port if 5173 is busy).
 
 ## Code Structure
 
 The source code is organized within the `src/` directory, following a standard React project structure.
 
+```
 /src
-├── App.css # Main stylesheet with variables and responsive design
-├── App.jsx # Root component, handles routing and global state (theme, popup)
-├── Cafe.jsx # Component for the "/cafe" page
-├── HomePage.jsx # Component for the "About" section on the main page
-├── Layout.jsx # Main layout component with sidebar, header, and footer
+├── App.css           # Main stylesheet with variables and responsive design
+├── App.jsx           # Root component, handles routing and global state (theme, popup)
+├── Cafe.jsx          # Component for the "/cafe" page
+├── HomePage.jsx      # Component for the "About" section on the main page
+├── Layout.jsx        # Main layout component with sidebar, header, and footer
 ├── ScrollToAnchor.jsx # Utility component for smooth scrolling to hash links
 ├── WeatherWidget.jsx # Component for the live weather display
-├── index.css # Global CSS resets and base styles
-└── main.jsx # The entry point of the React application
+├── index.css         # Global CSS resets and base styles
+└── main.jsx          # The entry point of the React application
+```
 
 ## Contact
 
 Yamin M - [reverb-saber.4b@icloud.com](mailto:reverb-saber.4b@icloud.com)
 
-Project Link: [https://github.com/atoll101](https://github.com/atoll101)
+Project Link: [https://github.com/atoll101/portfolio](https://github.com/atoll101/portfolio)
+
+## License
+
+This project is open-sourced under the MIT License. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for more information.
+````
