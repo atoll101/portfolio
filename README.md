@@ -81,16 +81,15 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
 This project requires an API key from OpenWeatherMap to fetch weather data.
 
 - Create a `.env` file in the root of the project:
+
   ```sh
   touch .env
   ```
 
-````
-
-  - Add your API key to the `.env` file. You can get a free key by signing up on the [OpenWeatherMap website](https://openweathermap.org/appid).
-    ```
-    VITE_OPENWEATHER_API_KEY=your_api_key_here
-    ```
+- Add your API key to the `.env` file. You can get a free key by signing up on the [OpenWeatherMap website](https://openweathermap.org/appid).
+  ```
+  VITE_OPENWEATHER_API_KEY=your_api_key_here
+  ```
 
 ### Run the Development Server
 
@@ -132,4 +131,7 @@ Project Link: [https://github.com/atoll101/portfolio](https://github.com/atoll10
 ## License
 
 This project is open-sourced under the MIT License. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for more information.
-````
+
+```
+
+```
