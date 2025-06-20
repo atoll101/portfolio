@@ -23,6 +23,22 @@ function MyComponent() {
 
 export default MyComponent;`,
   },
+
+  {
+    id: "tfnsw-timetable",
+    title: "TfNSW Realtime Timetable",
+    description:
+      "A live, realtime transport timetable for Transport for NSW (TfNSW), built using React and Vite, integrating directly with TfNSW APIs to provide up-to-date information.",
+    technologies: ["React", "Vite", "TfNSW APIs", "CSS3"],
+    link: "https://tfnsw-realtime-timetable.onrender.com/",
+    images: [
+      "/images/tfnsw-1.avif",
+      "/images/tfnsw-2.avif",
+      "/images/tfnsw-3.avif",
+    ],
+    code: ``,
+  },
+
   {
     id: "fibonacci",
     title: "Fibonacci Academy",
