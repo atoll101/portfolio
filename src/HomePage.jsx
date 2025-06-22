@@ -22,12 +22,11 @@ function HomePage({ toggleTheme, theme }) {
           </div>
         </div>
         <p>
-          TESTTTTTTTT I'm the human bridge between developers and clients,
-          helping turn big ideas into practical, well-delivered solutions. I
-          started out in civil engineering, working across a wide mix of
-          projects including water and wastewater systems, roads, dams, fire
-          infrastructure, fuel facilities, and sustainability work like carbon
-          accounting.
+          I'm the human bridge between developers and clients, helping turn big
+          ideas into practical, well-delivered solutions. I started out in civil
+          engineering, working across a wide mix of projects including water and
+          wastewater systems, roads, dams, fire infrastructure, fuel facilities,
+          and sustainability work like carbon accounting.
         </p>
         <p>
           I've worked in all sorts of industries, and what’s stayed consistent
