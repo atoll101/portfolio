@@ -45,17 +45,17 @@ const Layout = ({ toggleTheme, theme }) => {
               <ul>
                 <li>
                   <Link to="/#about" onClick={closeMobileNav}>
-                    / about
+                    about
                   </Link>
                 </li>
                 <li>
                   <Link to="/#projects" onClick={closeMobileNav}>
-                    / projects
+                    projects
                   </Link>
                 </li>
                 <li>
                   <Link to="/cafe" onClick={closeMobileNav}>
-                    / cafe
+                    cafe
                   </Link>
                 </li>
               </ul>

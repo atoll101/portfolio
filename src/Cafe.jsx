@@ -54,7 +54,7 @@ function Cafe({ toggleTheme, theme }) {
   return (
     <div className="section-block cafe-page">
       <div className="section-header-with-toggle">
-        <h3>/ cafe</h3>
+        <h3>cafe</h3>
         <div className="theme-toggle-container main-content-toggle">
           <ThemeToggleButton />
         </div>

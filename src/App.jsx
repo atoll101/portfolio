@@ -207,7 +207,7 @@ function App() {
                 <HomePage toggleTheme={toggleTheme} theme={theme} />
                 <section id="projects" className="section-block">
                   <div className="section-header-body">
-                    <h3>/ projects</h3>
+                    <h3>projects</h3>
                   </div>
                   <div className="projects-grid-container">
                     {projectsData.map((project) => (

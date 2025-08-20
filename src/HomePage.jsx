@@ -16,30 +16,30 @@ function HomePage({ toggleTheme, theme }) {
     <>
       <section id="about" className="section-block">
         <div className="section-header-with-toggle">
-          <h3>/ about</h3>
+          <h3>about</h3>
           <div className="theme-toggle-container main-content-toggle">
             <ThemeToggleButton onClick={toggleTheme} theme={theme} />
           </div>
         </div>
         <p>
-          I'm the human bridge between developers and clients, helping turn big
-          ideas into practical, well-delivered solutions. I started out in civil
-          engineering, working across a wide mix of projects including water and
-          wastewater systems, roads, dams, fire infrastructure, fuel facilities,
-          and sustainability work like carbon accounting.
+          I'm working in insurance technology, integrating LLM solutions into development
+          workflows and improving insurtech offerings, while pursuing a Masters of IT
+          (AI and Cybersecurity) at UNSW. I bridge the gap between developers and clients,
+          turning technical possibilities into practical solutions.
         </p>
         <p>
-          I've worked in all sorts of industries, and what’s stayed consistent
-          is my interest in solving problems and connecting people. I studied a
-          bit of architecture at uni, and that early interest in design still
-          shapes how I think about systems, communication, and user experience.
+          My background spans engineering consulting and project management across
+          infrastructure projects - water systems, roads, dams, and sustainability
+          initiatives. I'm bringing those problem-solving principles from the physical
+          world into SaaS and digital spaces. I love the complete lifecycle - from
+          scoping and understanding pain points to delivering solutions that solve real problems.
         </p>
         <p>
-          These days, I focus on making sure the right people are aligned, the
-          right questions are being asked, and the solutions being built
-          actually solve the problem. Outside of work, I spend my time
-          travelling, experimenting with café-style drinks at home, baking, and
-          illustrating random things.
+          My approach focuses on aligning the right people, asking the right questions,
+          and building solutions that actually work. That design thinking from my
+          engineering and architecture studies shapes how I create digital experiences.
+          Outside work, I spend time travelling, experimenting with café-style drinks
+          at home, baking, and illustrating.
         </p>
       </section>
     </>
