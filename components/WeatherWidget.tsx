@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 
-const getWeatherIcon = (conditionCode) => {
+const getWeatherIcon = (conditionCode: number) => {
   if (conditionCode >= 200 && conditionCode < 300) return "fas fa-bolt";
   if (conditionCode >= 300 && conditionCode < 400) return "fas fa-cloud-rain";
   if (conditionCode >= 500 && conditionCode < 600)
@@ -13,13 +15,22 @@ const getWeatherIcon = (conditionCode) => {
   return "fas fa-question-circle";
 };
 
+interface WeatherData {
+  description: string;
+  icon: string;
+  location: string;
+  celsius: number;
+  wind: number;
+  humidity: number;
+}
+
 function WeatherWidget() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [currentTime, setCurrentTime] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   const fetchWeatherData = useCallback(() => {
-    const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
     const city = "Sydney";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},AU&appid=${apiKey}&units=metric`;
 
