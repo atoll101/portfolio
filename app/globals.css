@@ -101,6 +101,12 @@ a:hover {
   color: var(--text-color-light);
   margin-bottom: 0.5rem;
   letter-spacing: -0.03em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar a h1:hover {
+  color: var(--accent-color);
 }
 
 .sidebar h2 {
@@ -253,6 +259,38 @@ section[id] {
 
 .section-block p a:hover {
   color: var(--accent-color);
+}
+
+.section-link-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-right: 0.5rem;
+}
+
+.section-link {
+  color: var(--text-color-dark);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-link:hover {
+  color: var(--accent-color);
+}
+
+.section-link-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.section-link:hover .section-link-arrow {
+  transform: rotate(-45deg) scale(1.2);
 }
 
 .experience-cards-container {

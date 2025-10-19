@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 import ScrollToAnchor from "@/components/ScrollToAnchor";
 import ProjectPopup from "@/components/ProjectPopup";
@@ -118,6 +119,11 @@ export default function HomePage() {
                   </div>
                 );
               })}
+            </div>
+            <div className="section-link-container">
+              <Link href="/civil-engineering" className="section-link">
+                GO TO MY ENGINEERING EXPERIENCE <span className="section-link-arrow">→</span>
+              </Link>
             </div>
           </section>
 

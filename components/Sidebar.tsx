@@ -68,8 +68,10 @@ const Sidebar = () => {
       </button>
 
       <div className="sidebar-content">
-        <h1>Yamin M</h1>
-        <h2>i like making things</h2>
+        <Link href="/" onClick={closeMobileNav}>
+          <h1>Yamin M</h1>
+        </Link>
+        <h2>Systems Analyst</h2>
 
         <nav className={`main-nav ${isMobileNavOpen ? "mobile-nav-open" : ""}`}>
           <ul>
@@ -101,17 +103,6 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="nav-divider"></li>
-            <li>
-              <Link
-                href="/civil-engineering"
-                onClick={closeMobileNav}
-                className={
-                  activeSection === "civil-engineering" ? "active" : ""
-                }
-              >
-                civil engineering
-              </Link>
-            </li>
             <li>
               <Link
                 href="/cafe"
