@@ -328,11 +328,11 @@ section[id] {
   display: block;
   text-decoration: none;
   color: inherit;
-  background-color: var(--card-bg);
+  background-color: transparent;
   padding: 1.5rem;
   border-radius: 8px;
-  border: var(--card-border);
-  box-shadow: var(--card-shadow);
+  border: 1px solid transparent;
+  box-shadow: none;
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
@@ -343,7 +343,7 @@ section[id] {
   transform: scale(1);
 }
 .project-card:hover {
-  transform: translateY(0);
+  background-color: var(--card-bg);
   border-color: var(--project-card-hover-border);
   box-shadow: var(--project-card-hover-shadow);
 }
@@ -632,11 +632,11 @@ section[id] {
 }
 
 .experience-card {
-  background-color: transparent;
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid transparent;
-  box-shadow: none;
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
@@ -650,7 +650,7 @@ section[id] {
 }
 
 .experience-card:hover {
-  background-color: var(--card-bg);
+  transform: translateY(0);
   border-color: var(--project-card-hover-border);
   box-shadow: var(--project-card-hover-shadow);
 }
