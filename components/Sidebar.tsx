@@ -7,13 +7,18 @@ import WeatherWidget from "./WeatherWidget";
 
 const Sidebar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("about");
   const pathname = usePathname();
 
   useEffect(() => {
     // Update active section based on route or scroll
     if (pathname === "/cafe") {
       setActiveSection("cafe");
+      return;
+    }
+
+    if (pathname === "/civil-engineering") {
+      setActiveSection("civil-engineering");
       return;
     }
 
@@ -31,10 +36,19 @@ const Sidebar = () => {
       { rootMargin: "-50% 0px -50% 0px" }
     );
 
+    // Handle scroll to top
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setActiveSection("about");
+      }
+    };
+
     sections.forEach((section) => observer.observe(section));
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [pathname]);
 
@@ -74,18 +88,7 @@ const Sidebar = () => {
                 onClick={closeMobileNav}
                 className={activeSection === "tech-experience" ? "active" : ""}
               >
-                tech experience
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#previous-experience"
-                onClick={closeMobileNav}
-                className={
-                  activeSection === "previous-experience" ? "active" : ""
-                }
-              >
-                previous work
+                experience
               </Link>
             </li>
             <li>
@@ -95,6 +98,18 @@ const Sidebar = () => {
                 className={activeSection === "projects" ? "active" : ""}
               >
                 personal projects
+              </Link>
+            </li>
+            <li className="nav-divider"></li>
+            <li>
+              <Link
+                href="/civil-engineering"
+                onClick={closeMobileNav}
+                className={
+                  activeSection === "civil-engineering" ? "active" : ""
+                }
+              >
+                civil engineering
               </Link>
             </li>
             <li>
