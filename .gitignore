@@ -33,9 +33,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# migration backups
-/old-vite-backup
-/portfolio-nextjs
-
 # playwright
 /.playwright-mcp
