@@ -13,8 +13,8 @@ export const projectsData: Project[] = [
     id: "portfolio",
     title: "Portfolio",
     description:
-      "A personal portfolio site showcasing my skills and projects, built with React and Vite.",
-    technologies: ["React", "Vite", "CSS3", "Responsive Design"],
+      "A modern, fully responsive portfolio website built with Next.js 15 and TypeScript. Features App Router for optimized routing, real-time weather integration via OpenWeather API, dark/light theme switching with localStorage persistence, and component-based architecture.",
+    technologies: ["Next.js 15", "TypeScript", "App Router", "OpenWeather API"],
     link: "https://www.yamin.com.au",
     images: ["/images/portfolio-1.avif", "/images/portfolio-2.avif"],
     code: `import React from 'react';
