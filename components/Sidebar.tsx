@@ -3,26 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import WeatherWidget from "./WeatherWidget";
-import { useTheme } from "@/lib/ThemeContext";
 
 const Sidebar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   const closeMobileNav = () => {
     setMobileNavOpen(false);
   };
-
-  const ThemeToggleButton = () => (
-    <button
-      onClick={toggleTheme}
-      className="theme-toggle-button"
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-    >
-      <i className="fas fa-sun theme-icon sun-icon"></i>
-      <i className="fas fa-moon theme-icon moon-icon"></i>
-    </button>
-  );
 
   return (
     <header className="sidebar">
@@ -60,9 +47,6 @@ const Sidebar = () => {
         </nav>
 
         <div className="sidebar-bottom-content">
-          <div className="theme-toggle-container sidebar-toggle">
-            <ThemeToggleButton />
-          </div>
           <WeatherWidget />
           <div className="social-links">
             <a

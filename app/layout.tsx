@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/lib/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Yamin Mustafa",
@@ -30,9 +29,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

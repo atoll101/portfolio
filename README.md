@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-This repository contains the source code for my personal portfolio website. It's a modern, single-page application built with Next.js 15, designed to showcase my projects, skills, and a little bit about myself. The site is fully responsive and features a clean, dual-theme interface.
+This repository contains the source code for my personal portfolio website. It's a modern, single-page application built with Next.js 15, designed to showcase my projects, skills, and a little bit about myself. The site is fully responsive and features a clean, dark-themed interface.
 
 **Live Demo:** [**www.yamin.com.au**](https://www.yamin.com.au)
 
@@ -30,7 +30,7 @@ The project is built from the ground up using modern web technologies, demonstra
 ## Features
 
 - **Responsive Design**: A mobile-first approach ensures a seamless experience on all devices, from phones to desktops.
-- **Dual Theme (Light/Dark Mode)**: A sleek theme toggle that respects the user's system preference (`prefers-color-scheme`) on the first visit and saves their choice in `localStorage` for future visits.
+- **Dark Theme**: Clean dark mode design optimized for readability and reduced eye strain.
 - **Component-Based Architecture**: Built with React and Next.js, the UI is organized into logical, reusable components.
 - **App Router with Client-Side Navigation**: Uses Next.js 15 App Router for fast, optimized routing. Includes dedicated routes for the homepage and a "Cafe" section.
 - **Interactive Project Showcase**: Projects are displayed in a grid and open in a detailed pop-up modal, allowing for rich content like descriptions, images, and code snippets.
@@ -152,7 +152,6 @@ The source code follows Next.js 15 App Router conventions:
 │   ├── ProjectPopup.tsx    # Project modal component
 │   └── ScrollToAnchor.tsx  # Hash navigation handler
 ├── lib/
-│   ├── ThemeContext.tsx    # Theme provider with localStorage persistence
 │   └── projectsData.ts     # Projects and drinks data
 ├── public/
 │   └── images/             # All images (.avif format)

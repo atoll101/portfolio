@@ -60,14 +60,6 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({ project, onClose, isAnimati
             <li key={tech}>{tech}</li>
           ))}
         </ul>
-        {project.code && project.code.trim() && (
-          <>
-            <h4>Code Snippet:</h4>
-            <pre className="popup-code-block">
-              <code>{project.code}</code>
-            </pre>
-          </>
-        )}
       </div>
     </div>
   );

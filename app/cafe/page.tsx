@@ -4,22 +4,8 @@ import React from "react";
 import Sidebar from "@/components/Sidebar";
 import ScrollToAnchor from "@/components/ScrollToAnchor";
 import { drinksData } from "@/lib/projectsData";
-import { useTheme } from "@/lib/ThemeContext";
 
 export default function CafePage() {
-  const { theme, toggleTheme } = useTheme();
-
-  const ThemeToggleButton = () => (
-    <button
-      onClick={toggleTheme}
-      className="theme-toggle-button"
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-    >
-      <i className="fas fa-sun theme-icon sun-icon"></i>
-      <i className="fas fa-moon theme-icon moon-icon"></i>
-    </button>
-  );
-
   return (
     <>
       <ScrollToAnchor />
@@ -27,11 +13,8 @@ export default function CafePage() {
         <Sidebar />
         <main className="main-content">
           <div className="section-block cafe-page">
-            <div className="section-header-with-toggle">
+            <div className="section-header-body">
               <h3>cafe</h3>
-              <div className="theme-toggle-container main-content-toggle">
-                <ThemeToggleButton />
-              </div>
             </div>
 
             <div className="drinks-grid-container">
