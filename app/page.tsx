@@ -122,7 +122,8 @@ export default function HomePage() {
             </div>
             <div className="section-link-container">
               <Link href="/civil-engineering" className="section-link">
-                GO TO MY ENGINEERING EXPERIENCE <span className="section-link-arrow">→</span>
+                VIEW MY ENGINEERING EXPERIENCE{" "}
+                <span className="section-link-arrow">→</span>
               </Link>
             </div>
           </section>
