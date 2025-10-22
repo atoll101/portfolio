@@ -5,8 +5,10 @@ import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 import ScrollToAnchor from "@/components/ScrollToAnchor";
 import ProjectPopup from "@/components/ProjectPopup";
+import FadeInSection from "@/components/FadeInSection";
 import { projectsData, type Project } from "@/lib/projectsData";
 import { techExperienceData } from "@/lib/experienceData";
+import { skillsData } from "@/lib/skillsData";
 
 export default function HomePage() {
   const [showPopup, setShowPopup] = useState(false);
@@ -37,8 +39,9 @@ export default function HomePage() {
       <div className="app-container">
         <Sidebar />
         <main className="main-content">
-          <section id="about" className="section-block">
-            <p>
+          <FadeInSection>
+            <section id="about" className="section-block">
+              <p>
               I'm working in insurance technology, integrating LLM solutions
               into development workflows and improving insurtech offerings,
               while pursuing a{" "}
@@ -71,10 +74,31 @@ export default function HomePage() {
               shapes how I create digital experiences. Outside work, I spend
               time travelling, experimenting with café-style drinks at home,
               baking, and illustrating.
-            </p>
-          </section>
+              </p>
+            </section>
+          </FadeInSection>
 
-          <section id="tech-experience" className="section-block">
+          <FadeInSection delay={100}>
+            <section id="skills" className="section-block">
+            <div className="skills-grid">
+              {skillsData.map((category) => (
+                <div key={category.id} className="skill-category">
+                  <h3 className="skill-category-title">{category.category}</h3>
+                  <div className="skill-tags">
+                    {category.skills.map((skill) => (
+                      <span key={skill} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            </section>
+          </FadeInSection>
+
+          <FadeInSection delay={200}>
+            <section id="tech-experience" className="section-block">
             <div className="experience-grid-container">
               {techExperienceData.map((experience) => {
                 const CardContent = (
@@ -126,9 +150,11 @@ export default function HomePage() {
                 <span className="section-link-arrow">→</span>
               </Link>
             </div>
-          </section>
+            </section>
+          </FadeInSection>
 
-          <section id="projects" className="section-block">
+          <FadeInSection delay={300}>
+            <section id="projects" className="section-block">
             <div className="projects-grid-container">
               {projectsData.map((project) => (
                 <div
@@ -150,7 +176,8 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </section>
+            </section>
+          </FadeInSection>
         </main>
       </div>
 

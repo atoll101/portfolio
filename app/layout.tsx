@@ -1,15 +1,69 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#238879",
+};
+
 export const metadata: Metadata = {
-  title: "Yamin Mustafa",
-  description: "Yamin Mustafa - Portfolio showcasing projects and skills in full-stack development, AI, and cybersecurity.",
+  metadataBase: new URL("https://yamin.com.au"),
+  title: {
+    default: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+    template: "%s | Yamin Mustafa",
+  },
+  description:
+    "Systems Analyst specializing in insurance technology and LLM integration. Building innovative solutions with React, Next.js, and AI. Masters of IT (AI & Cybersecurity) at UNSW.",
+  keywords: [
+    "Systems Analyst",
+    "Full-Stack Developer",
+    "Insurance Technology",
+    "LLM Integration",
+    "AI Solutions",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Cybersecurity",
+    "UNSW",
+  ],
+  authors: [{ name: "Yamin Mustafa" }],
+  creator: "Yamin Mustafa",
   openGraph: {
-    title: "Yamin Mustafa - Portfolio",
-    description: "Full-stack developer specializing in insurance technology, LLM solutions, AI and cybersecurity.",
+    type: "website",
+    locale: "en_AU",
     url: "https://yamin.com.au",
     siteName: "Yamin Mustafa Portfolio",
-    type: "website",
+    title: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+    description:
+      "Systems Analyst specializing in insurance technology and LLM integration. Building innovative solutions with React, Next.js, and AI.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+    description:
+      "Systems Analyst specializing in insurance technology and LLM integration. Building innovative solutions with React, Next.js, and AI.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
