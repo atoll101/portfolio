@@ -86,6 +86,15 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
+                href="/#skills"
+                onClick={closeMobileNav}
+                className={activeSection === "skills" ? "active" : ""}
+              >
+                skills
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/#tech-experience"
                 onClick={closeMobileNav}
                 className={activeSection === "tech-experience" ? "active" : ""}
