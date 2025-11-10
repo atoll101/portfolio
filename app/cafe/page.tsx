@@ -43,6 +43,10 @@ export default function CafePage() {
               <h3>cafe</h3>
             </div>
 
+            <p style={{ marginBottom: '2rem' }}>
+              Here's what I've been making lately—drinks and desserts for friends, family, and anyone who stops by. It's my way of sharing what I love about culinary creativity.
+            </p>
+
             {/* Japanese-style Menu */}
             <div className="japanese-menu">
               <div className="menu-section">
