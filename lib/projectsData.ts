@@ -47,7 +47,7 @@ export default MyComponent;`,
     description:
       "A comprehensive online learning platform for NSW Selective and OC Exam preparation. Engineered using WordPress, it integrates custom functionalities with HTML and CSS3 to deliver interactive practice exams and a seamless user experience, mirroring the official test environment.",
     technologies: ["Wordpress", "HTML", "CSS3"],
-    link: "https://www.fibonacciacademy.com.au",
+    link: "https://fibonacci-academy-website.vercel.app/",
     images: ["/images/fibonacci-1.avif", "/images/fibonacci-2.avif"],
     code: `.custom-button {
   background-color: #238879;
