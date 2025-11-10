@@ -11,7 +11,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://yamin.com.au"),
   title: {
-    default: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+    default: "Yamin Mustafa",
     template: "%s | Yamin Mustafa",
   },
   description:
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: "https://yamin.com.au",
     siteName: "Yamin Mustafa Portfolio",
-    title: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+    title: "Yamin Mustafa",
     description:
       "Systems Analyst specializing in insurance technology and LLM integration. Building innovative solutions with React, Next.js, and AI.",
     images: [
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+        alt: "Yamin Mustafa",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yamin Mustafa - Systems Analyst & Full-Stack Developer",
+    title: "Yamin Mustafa",
     description:
       "Systems Analyst specializing in insurance technology and LLM integration. Building innovative solutions with React, Next.js, and AI.",
     images: ["/og-image.png"],
