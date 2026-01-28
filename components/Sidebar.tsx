@@ -33,7 +33,7 @@ const Sidebar = () => {
           }
         });
       },
-      { rootMargin: "-50% 0px -50% 0px" }
+      { rootMargin: "-50% 0px -50% 0px" },
     );
 
     // Handle scroll to top
@@ -109,16 +109,6 @@ const Sidebar = () => {
                 className={activeSection === "projects" ? "active" : ""}
               >
                 personal projects
-              </Link>
-            </li>
-            <li className="nav-divider"></li>
-            <li>
-              <Link
-                href="/cafe"
-                onClick={closeMobileNav}
-                className={activeSection === "cafe" ? "active" : ""}
-              >
-                cafe
               </Link>
             </li>
           </ul>
