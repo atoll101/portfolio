@@ -116,7 +116,12 @@ const Sidebar = () => {
             >
               <i className="fab fa-github"></i>
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a
+              href="https://au.linkedin.com/in/yamin-mustafa"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-linkedin"></i>
             </a>
             <a href="mailto:reverb-saber.4b@icloud.com" aria-label="Mail">

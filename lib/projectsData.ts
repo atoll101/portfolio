@@ -10,6 +10,17 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    id: "dozylab",
+    title: "Dozylab",
+    description:
+      "A product venture spanning the full consumer lifecycle — from concept sketches and CAD-based design through to manufacturing, vendor relationships, and launch. I led the website development on WordPress and am currently transitioning it to a headless Next.js architecture. Two original products have been developed and brought to market since January 2025.",
+    technologies: ["WordPress", "Next.js", "CSS"],
+    link: "https://dozylab.com",
+    images: [],
+    code: ``,
+  },
+
+  {
     id: "portfolio",
     title: "Portfolio",
     description:
