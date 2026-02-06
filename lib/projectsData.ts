@@ -13,7 +13,7 @@ export const projectsData: Project[] = [
     id: "dozylab",
     title: "Dozylab",
     description:
-      "A product venture where I handle the end-to-end technical delivery — WordPress design, database configuration, and cloud hosting on Digital Ocean via SSH. Currently leading the transition to a headless Next.js frontend, including API integration, deployment, and backend infrastructure. Beyond dev, I manage vendor sourcing, brand identity and packaging design.",
+      "A product venture where I handle the end-to-end technical delivery — WordPress design, database configuration, and cloud hosting via SSH. Currently leading the transition to a headless Next.js frontend, including API integration, deployment, and backend infrastructure. Beyond dev, I manage vendor sourcing, brand identity and packaging design.",
     technologies: ["WordPress", "Next.js", "CSS"],
     link: "https://dozylab.com",
     images: [],
