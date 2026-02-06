@@ -55,6 +55,16 @@ export default MyComponent;`,
 }`,
   },
   {
+    id: "dozylab",
+    title: "Dozylab",
+    description:
+      "A part-time product venture spanning the full product and consumer lifecycle. I co-lead product development including CAD-based design, vendor sourcing, and manufacturing relationships. Built the initial WordPress site and am currently leading the transition to a Next.js headless WordPress architecture for improved performance and flexibility.",
+    technologies: ["Next.js", "WordPress", "CSS3"],
+    link: "https://www.dozylab.com.au",
+    images: [],
+    code: ``,
+  },
+  {
     id: "studioho",
     title: "Studio Ho",
     description:
