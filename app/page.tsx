@@ -1,37 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 import ScrollToAnchor from "@/components/ScrollToAnchor";
-import ProjectPopup from "@/components/ProjectPopup";
 import FadeInSection from "@/components/FadeInSection";
-import { projectsData, type Project } from "@/lib/projectsData";
+import { projectsData } from "@/lib/projectsData";
 import { techExperienceData } from "@/lib/experienceData";
 
 export default function HomePage() {
-  const [showPopup, setShowPopup] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const openPopup = (project: Project) => {
-    setSelectedProject(project);
-    setShowPopup(true);
-    document.body.style.overflow = "hidden";
-    setTimeout(() => {
-      setIsAnimating(true);
-    }, 10);
-  };
-
-  const closePopup = () => {
-    setIsAnimating(false);
-    document.body.style.overflow = "unset";
-    setTimeout(() => {
-      setShowPopup(false);
-      setSelectedProject(null);
-    }, 300);
-  };
-
   return (
     <>
       <ScrollToAnchor />
@@ -140,38 +117,49 @@ export default function HomePage() {
           <FadeInSection delay={300}>
             <section id="projects" className="section-block">
               <div className="projects-grid-container">
-                {projectsData.map((project) => (
-                  <div
-                    key={project.id}
-                    className="project-card"
-                    onClick={() => openPopup(project)}
-                  >
-                    <div className="project-item">
-                      <div>
-                        <h4>{project.title}</h4>
-                        <p>{project.description}</p>
-                        <ul>
-                          {project.technologies.map((tech) => (
-                            <li key={tech}>{tech}</li>
-                          ))}
-                        </ul>
+                {projectsData.map((project) =>
+                  project.link ? (
+                    <a
+                      key={project.id}
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-card"
+                    >
+                      <div className="project-item">
+                        <div>
+                          <h4>{project.title}</h4>
+                          <p>{project.description}</p>
+                          <ul>
+                            {project.technologies.map((tech) => (
+                              <li key={tech}>{tech}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </a>
+                  ) : (
+                    <div key={project.id} className="project-card">
+                      <div className="project-item">
+                        <div>
+                          <h4>{project.title}</h4>
+                          <p>{project.description}</p>
+                          <ul>
+                            {project.technologies.map((tech) => (
+                              <li key={tech}>{tech}</li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             </section>
           </FadeInSection>
         </main>
       </div>
 
-      {showPopup && (
-        <ProjectPopup
-          project={selectedProject}
-          onClose={closePopup}
-          isAnimating={isAnimating}
-        />
-      )}
     </>
   );
 }
